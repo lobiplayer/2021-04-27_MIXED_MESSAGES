@@ -250,8 +250,22 @@ const countryList = [
 	"Åland Islands"
 ];
 
-function randomCountryIndex() {
-    return Math.floor(Math.random() * countryList.length)
+function randomCountry() {
+    return countryList[Math.floor(Math.random() * countryList.length)];
 }
 
-console.log(countryList[randomCountryIndex()]);
+function randomMonth() {
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'September', 'October', 'November', 'December']
+    return months[Math.floor(Math.random() * months.length)];
+}
+
+function randomPerson() {
+    let persons = ['Joe Biden', 'Angela Merkel', 'your best friend', 'your mother-in-law', 'your neighbour', 'Vladamir Putin']
+    return persons[Math.floor(Math.random() * persons.length)];
+}
+
+function createMessage() {
+    return console.log(`Congratulations! You have won a vacation! You go in ${randomMonth()} together with ${randomPerson()} to the beautiful country of ${randomCountry()}!`)
+}
+
+createMessage()
